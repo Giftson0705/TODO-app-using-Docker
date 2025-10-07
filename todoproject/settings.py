@@ -81,12 +81,14 @@ WSGI_APPLICATION = 'todoproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'todo_db',
-        'CLIENT': {
-            'host': os.getenv("mongodb+srv://Samuel:Sams%4060fps@cluster0.vqx4bxy.mongodb.net/"),
+        'NAME': 'djongo',
+        "CLIENT" : {
+        'host' : 'mongodb+srv://Samuel:<Sams%4060fps>@cluster0.vqx4bxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+        'username': 'Samuel',
+        'password' : 'Sams%4060fps',
         }
     }
-}
+}   
 
 
 # Password validation
