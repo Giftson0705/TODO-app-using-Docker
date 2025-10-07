@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bclnibn$z1(d^efr1y&=3=9jdl45ipig!2z-%9e4(kf6^ha+$i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,17 +78,25 @@ WSGI_APPLICATION = 'todoproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'djongo',
+#         "CLIENT" : {
+#         'host' : 'mongodb+srv://Samuel:Sams%4060fps@cluster0.vqx4bxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+#         # 'username': 'Samuel',
+#         # 'password' : 'Sams%4060fps',
+#         }
+#     }
+# }   
+
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'djongo',
-        "CLIENT" : {
-        'host' : 'mongodb+srv://Samuel:<Sams%4060fps>@cluster0.vqx4bxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-        'username': 'Samuel',
-        'password' : 'Sams%4060fps',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-}   
+}
+
 
 
 # Password validation
